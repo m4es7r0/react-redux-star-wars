@@ -2,7 +2,7 @@ import PeoplePage from '../PeoplePage';
 
 const App = () => {
   return (
-    <section>
+    <section className='section__navigate container'>
       <PeoplePage />
     </section>
   );

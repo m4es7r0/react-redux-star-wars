@@ -15,6 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   background-color: #222;
+  color: #e4e4e4;
 }
 
 code {
@@ -26,10 +27,4 @@ code {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0px 10px;
-}
-
-.loader {
-    height: 120px;
-    width: 120px;
-    align-self: center;
 }

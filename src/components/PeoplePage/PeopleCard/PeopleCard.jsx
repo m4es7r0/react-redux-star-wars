@@ -11,7 +11,7 @@ const PeopleCard = ({ person }) => {
                 href={person.url}
                 target={'_blank'}
                 rel="noreferrer">
-                <LazyLoadImage src={person.img} alt={person.name} effect='blur'/>
+                <LazyLoadImage src={person.img} alt={person.name} effect='blur' />
                 <p>{person.name}</p>
             </a>
         </li>
