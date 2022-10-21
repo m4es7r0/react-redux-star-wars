@@ -1,19 +1,19 @@
 
 export const getAPIResource = async (url) => {
     try {
-        const res = await fetch(url)
-        const body = await res.json()
+        const res = await fetch(url);
 
         if (!res.ok) {
-            console.error('Could not fetch.', res.status)
+            console.error('Could not fetch.', res.status);
+            return false;
         }
 
-        return body
+        return await res.json(); 
     } catch (error) {
-        throw new Error(error)
+        console.error('Could not fetch.', error.message);
+        return false;
     }
 }
-
 // (async () => {
 //     const body = await getAPIResource(SWAPI_ROOT + SWAPI_PEOPLE)
 //     console.log(body)

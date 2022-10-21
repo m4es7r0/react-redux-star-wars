@@ -1,3 +1,5 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+
 import cn from 'classnames'
 import styles from './PeopleCard.module.scss'
 
@@ -9,7 +11,7 @@ const PeopleCard = ({ person }) => {
                 href={person.url}
                 target={'_blank'}
                 rel="noreferrer">
-                <img src={person.img} alt={person.name} />
+                <LazyLoadImage src={person.img} alt={person.name} effect='blur'/>
                 <p>{person.name}</p>
             </a>
         </li>
