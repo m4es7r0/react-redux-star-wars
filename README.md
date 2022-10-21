@@ -1,1 +1,1 @@
-# Getting Started with Create React App
+# React-Redux Star Wars project 
