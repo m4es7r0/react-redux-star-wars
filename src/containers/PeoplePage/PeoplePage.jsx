@@ -4,8 +4,9 @@ import { getPeopleId, getPeopleImage } from '../../services/getPeopleData';
 import { getAPIResource } from '../../utils/network'
 import { API_PEOPLE } from '../../constants/api';
 
+import PeopleList from '../../components/PeoplePage/PeopleList';
 import loader from '../../static/loader.apng'
-import cn from 'classnames';
+
 import styles from './PeoplePage.module.scss'
 
 const PeoplePage = () => {
@@ -16,7 +17,7 @@ const PeoplePage = () => {
         const peopleList = res.results.map(({ name, url }) => {
             const id = getPeopleId(url)
             const img = getPeopleImage(id)
-            
+
             return { id, name, url, img }
         })
         setPeople(peopleList)
@@ -27,19 +28,13 @@ const PeoplePage = () => {
     }, [])
 
     return (
-        <ul className={cn(styles.list)}>
-            {people.length > 0 ?
-                people.map(({ name, img }) => {
-                    return (
-                        <li key={name}>
-                            <div className={cn(styles.card)}>
-                                <img src={img} alt={name} />
-                                <p>{name}</p>
-                            </div>
-                        </li>
-                    )
-                }) : <img src={loader} alt="loading..." width={100} height={100} />}
-        </ul>
+        <div className={styles.page}>
+            {
+                people.length > 0
+                ? <PeopleList people={people} />
+                : <img src={loader} alt="loading..." className='loader' />
+            }
+        </div>
     )
 }
 
